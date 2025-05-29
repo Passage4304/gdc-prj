@@ -1,0 +1,11 @@
+tar: Removing leading `/' from member names
+2025-05-29 16:21:11 [+] Бэкап успешно создан: backup_2025-05-29_16-21-11.tar.gz
+2025-05-29 16:24:30 [+] Успешное восстановление из backup_2025-05-29_16-21-11.tar.gz в /home/artem/git/hub/gdc-prj/base-block/linux/chapter-4/task-2/from-backup
+tar: : Invalid number of elements
+Try 'tar --help' or 'tar --usage' for more information.
+2025-05-29 16:29:26 [!] Ошибка восстановления backup_2025-05-29_16-21-11.tar.gz
+tar: Removing leading `/' from member names
+2025-05-29 16:38:21 [+] Бэкап успешно создан: backup_2025-05-29_16-38-21.tar.gz
+tar: Removing leading `/' from member names
+2025-05-29 16:40:00 [+] Бэкап успешно создан: backup_2025-05-29_16-40-00.tar.gz
+2025-05-29 16:41:17 [+] Успешное восстановление из backup_2025-05-29_16-40-00.tar.gz в /home/artem/git/hub/gdc-prj/base-block/linux/chapter-4/task-2/from-backup

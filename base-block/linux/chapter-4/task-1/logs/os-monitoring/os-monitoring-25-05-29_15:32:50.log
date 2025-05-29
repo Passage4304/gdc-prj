@@ -1,0 +1,31 @@
++ echo -e '----------- uptime command output ----------\n'
+----------- uptime command output ----------
+
++ uptime
+ 15:32:50 up  3:55,  1 user,  load average: 1.13, 1.10, 0.76
++ echo -e '----------- free command output ----------\n'
+----------- free command output ----------
+
++ free
+               total        used        free      shared  buff/cache   available
+Mem:        16319316     8784528     3522724      173072     4519952     7534788
+Swap:        4194300           0     4194300
++ echo -e '----------- df -h command output ----------\n'
+----------- df -h command output ----------
+
++ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           1.6G  2.7M  1.6G   1% /run
+/dev/nvme0n1p2  233G  151G   71G  69% /
+tmpfs           7.8G   38M  7.8G   1% /dev/shm
+tmpfs           5.0M   20K  5.0M   1% /run/lock
+efivarfs        128K   40K   84K  32% /sys/firmware/efi/efivars
+tmpfs           7.8G     0  7.8G   0% /run/qemu
+/dev/sda1       916G  300G  571G  35% /mnt/data-hard-1TB
+/dev/nvme0n1p1  1.1G  6.2M  1.1G   1% /boot/efi
+tmpfs           1.6G   84K  1.6G   1% /run/user/1003
+tmpfs           1.6G  172K  1.6G   1% /run/user/1000
+/dev/sdb1       117G   74G   44G  64% /media/artem/0189-8400
++ echo -e '----------- standart output ----------\n'
+----------- standart output ----------
+

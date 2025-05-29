@@ -1,0 +1,45 @@
+useradd: Permission denied.
+useradd: cannot lock /etc/group; try again later.
+2025-05-29 17:18:19 | Ошибка создания пользователя user1
+useradd: Permission denied.
+useradd: cannot lock /etc/group; try again later.
+2025-05-29 17:18:19 | Ошибка создания пользователя user2
+useradd: Permission denied.
+useradd: cannot lock /etc/group; try again later.
+2025-05-29 17:18:19 | Ошибка создания пользователя user3
+useradd: Permission denied.
+useradd: cannot lock /etc/group; try again later.
+2025-05-29 17:18:19 | Ошибка создания пользователя admin1
+2025-05-29 17:18:42 | Пользователь user1 создан с паролем: p7L+qOJzISjTrxmq
+2025-05-29 17:18:42 | SSH ключи созданы для user1
+2025-05-29 17:18:43 | Пользователь user2 создан с паролем: zwgQYQc0QyhKR8PS
+2025-05-29 17:18:43 | SSH ключи созданы для user2
+2025-05-29 17:18:43 | Пользователь user3 создан с паролем: wH7mXQG9Iqv+c3Kc
+2025-05-29 17:18:44 | SSH ключи созданы для user3
+2025-05-29 17:18:44 | Пользователь admin1 создан с паролем: nqoa+Hsy+DUpflHP
+2025-05-29 17:18:44 | SSH ключи созданы для admin1
+userdel: Permission denied.
+userdel: cannot lock /etc/passwd; try again later.
+2025-05-29 17:20:00 | Пользователь user1 удалён (домашняя директория сохранена).
+userdel: Permission denied.
+userdel: cannot lock /etc/passwd; try again later.
+2025-05-29 17:20:00 | Пользователь user2 и домашняя директория удалены.
+userdel: Permission denied.
+userdel: cannot lock /etc/passwd; try again later.
+2025-05-29 17:20:00 | Пользователь user3 и домашняя директория удалены.
+userdel: Permission denied.
+userdel: cannot lock /etc/passwd; try again later.
+2025-05-29 17:20:00 | Пользователь admin1 удалён (домашняя директория сохранена).
+2025-05-29 17:20:34 | Пользователь user1 удалён (домашняя директория сохранена).
+userdel: user2 mail spool (/var/mail/user2) not found
+2025-05-29 17:20:34 | Пользователь user2 и домашняя директория удалены.
+userdel: user3 mail spool (/var/mail/user3) not found
+2025-05-29 17:20:34 | Пользователь user3 и домашняя директория удалены.
+2025-05-29 17:20:34 | Пользователь admin1 удалён (домашняя директория сохранена).
+useradd: Permission denied.
+useradd: cannot lock /etc/group; try again later.
+2025-05-29 17:24:42 | Ошибка создания пользователя admin1
+useradd: warning: the home directory /home/admin1 already exists.
+useradd: Not copying any file from skel directory into it.
+2025-05-29 17:25:28 | Пользователь admin1 создан с паролем: ceDr6Z/mtvRlNhy6
+2025-05-29 17:25:28 | SSH ключи созданы для admin1
