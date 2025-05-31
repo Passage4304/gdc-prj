@@ -1,0 +1,7 @@
+Package: configs
+Version: 1.0
+Section: base
+Priority: optional
+Architecture: all
+Maintainer: User Name username@mail.nl
+Description: Пример .deb-пакета с конфигурационными файлами
