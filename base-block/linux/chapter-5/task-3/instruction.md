@@ -41,6 +41,12 @@ sudo systemctl reload nginx
 sudo apt install php-fpm php-mysql # устанавливаем PHP
 ```
 
+### PHPMyAdmin
+```bash
+sudo apt install phpmyadmin # установка phpmyadmin
+sudo ln -s /usr/share/phpmyadmin /var/www/mysite/phpmyadmin # подключение к nginx
+```
+
 ### Добавляем локальное доменное имя
 ```bash
 sudo vim /etc/hosts
