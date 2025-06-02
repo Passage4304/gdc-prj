@@ -1,0 +1,14 @@
+[Unit]
+Description=My simpe Python daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/mydaemon.py
+Restart=always
+User=mydaemon
+Group=mydaemon
+StandardOutput=null
+StandardError=null
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+/var/log/mydaemon.log {
+    weekly
+    rotate 4
+    compress
+    missingok
+    notifempty
+    create 0640 mydaemon mydaemon 
+    postrotate
+        systemctl restart mydaemon.service > /dev/null 2>&1 || true
+    endscript
+}
