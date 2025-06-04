@@ -1,0 +1,12 @@
+HTTP/2 200 
+server: nginx/1.24.0 (Ubuntu)
+date: Wed, 04 Jun 2025 08:55:05 GMT
+content-type: text/css
+content-length: 2220
+last-modified: Sat, 31 May 2025 06:37:41 GMT
+etag: "683aa3b5-8ac"
+expires: Fri, 04 Jul 2025 08:55:05 GMT
+cache-control: max-age=2592000
+cache-control: public
+accept-ranges: bytes
+
