@@ -1,1 +1,2 @@
-Some text for 1st file
+Some text for 1st file.
+Some editing.
