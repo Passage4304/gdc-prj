@@ -1,0 +1,38 @@
+services:
+  primary:
+    image: postgres:16
+    container_name: pg-primary
+    restart: always
+    environment:
+      POSTGRES_USER: repl_user
+      POSTGRES_PASSWORD: repl_pass
+      POSTGRES_DB: appdb
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./primary:/docker-entrypoint-initdb.d
+    networks:
+      - pgnet
+
+  standby:
+    image: postgres:16
+    container_name: pg-standby
+    restart: always
+    environment:
+      POSTGRES_USER: repl_user
+      PGPASSWORD: repl_pass
+    depends_on:
+      - primary
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata-standby:/var/lib/postgresql/data
+    entrypoint: ["standby-entrypoint.sh"]
+    networks:
+      - pgnet
+
+volumes:
+  pgdata-standby:
+
+networks:
+  pgnet:
