@@ -4,6 +4,11 @@
 ### Запускаем Python Flask приложение ###
 sudo vim /etc/nginx/sites-available/mysite # открываем конфигурационный файл сайта nginx
 ################################
+upstream flask_backend {
+    server 127.0.0.1:5001;
+    server 127.0.0.1:5002;
+}
+
 server {
     listen 80;
     server_name mysite.local;
