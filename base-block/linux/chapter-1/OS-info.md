@@ -17,6 +17,12 @@ ls -la /etc/lilo
 ls -la /etc/grub
 ```
 
+### Просмотр логов загрузки системы
+```bash
+journalctl -b <number_of_boot>
+dmesg
+```
+
 ### Основные характеристики системы:
 `hostnamectl`
 - Static hostname: B450M-S2H
