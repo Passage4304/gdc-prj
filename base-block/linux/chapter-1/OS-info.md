@@ -11,6 +11,12 @@ Linux 6.11.0-24-generic
 | Mem:  | 15Gi  | 4.9Gi | 7.2Gi | 162Mi  | 4.0Gi      | 10Gi      |
 | Swap: | 4.0Gi | 0B    | 4.0Gi |        |            |           |
 
+### Определение типа загрузчика
+```bash
+ls -la /etc/lilo
+ls -la /etc/grub
+```
+
 ### Основные характеристики системы:
 `hostnamectl`
 - Static hostname: B450M-S2H
