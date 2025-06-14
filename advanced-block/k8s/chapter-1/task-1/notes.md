@@ -1,16 +1,19 @@
+### Проброс порта minikube, kubernetes
+```yaml
+### Манифест для пода ###
 apiVersion: v1
 kind: Pod
 metadata:
   name: nginx-pod
-  labels:
-    app: nginx
 spec:
   containers:
     - name: nginx
-      image: nginx:latest
+      image: nginx
       ports:
         - containerPort: 80
----
+```
+```yaml
+### Использование Cluster IP Service + kubectl port-forward ###
 apiVersion: v1
 kind: Service
 metadata:
@@ -22,4 +25,7 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-
+```
+```bash
+kubectl port-forward pod/nginx-pod 8080:80
+```
