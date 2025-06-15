@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stress-app1
+  labels:
+    app: stress-app1
+spec:
+  containers:
+    - name: stress-app1
+      image: polinux/stress
+      command: [
+        "sh",
+        "-c",
+        "sleep 3600"
+      ]
+      resources:
+        requests:
+          memory: "300Mi"
+          cpu: "300m"
+        limits:
+          memory: "500Mi"
+          cpu: "500m"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stress-app2
+  labels:
+    app: stress-app2
+spec:
+  containers:
+    - name: stress-app2
+      image: polinux/stress
+      command: [
+        "sh",
+        "-c",
+        "sleep 3600"
+      ]
+      resources:
+        requests:
+          memory: "100Mi"
+          cpu: "100m"
+        limits:
+          memory: "200Mi"
+          cpu: "200m"
