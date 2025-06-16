@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  app:
+    image: myapp:v2.5
+    container_name: myapp
+    restart: always
+    environment:
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_HOST=${DB_HOST}
+    depends_on:
+      - db
+    ports:
+      - 5000:5000
+    networks: 
+      - myapp-net
+  
+  db:
+    image: postgres
+    container_name: db
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_DB=${DB_NAME}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready", "--quiet"]
+      interval: 1s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - myapp-db:/var/lib/postgresql/data
+    networks: 
+      - myapp-net
+
+volumes:
+  myapp-db:
+
+networks:
+  myapp-net:
