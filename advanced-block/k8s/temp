@@ -33,3 +33,8 @@ docker run \
     --verbose
 
 stress --cpu 1 --io 1 --vm 1 --vm-bytes 256 --timeout 300 --verbose
+
+openssl req -x509 -out app.test.crt -keyout app.test.key \
+  -newkey rsa:2048 -nodes -sha256 \
+  -subj '/CN=app.test' -extensions EXT -config <( \
+   printf "[dn]\nCN=app.test\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:app.test\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
