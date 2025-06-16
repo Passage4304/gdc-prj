@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      terminationGracePeriodSeconds: 30
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            trap 'touch /tmp/terminating; sleep 20; exit' TERM;
+            nginx -g 'daemon off;' &
+            wait
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          exec:
+            command: ["sh", "-c", "! test -f /tmp/terminating"]
+          # httpGet:
+          #   path: /
+          #   port: 80
+          initialDelaySeconds: 
+          periodSeconds: 10
+          timeoutSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          timeoutSeconds: 2
+          successThreshold: 1
+          failureThreshold: 3
