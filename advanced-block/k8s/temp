@@ -1,0 +1,35 @@
+for i in ${certs[*]}; do
+  openssl genrsa -out "${i}.key.new" 4096
+
+  openssl req -new -key "${i}.key.new" -sha256 \
+    -config "ca.conf" -section ${i} \
+    -out "${i}.csr.new"
+
+  openssl x509 -req -days 3653 -in "${i}.csr.new" \
+    -copy_extensions copyall \
+    -sha256 -CA "ca.crt" \
+    -CAkey "ca.key" \
+    -CAcreateserial \
+    -out "${i}.crt.new"
+done
+
+for host in node-0 node-1; do
+  scp ${host}.crt \
+    root@${host}:/var/lib/kubelet/kubelet.crt
+
+  scp ${host}.key \
+    root@${host}:/var/lib/kubelet/kubelet.key
+done
+
+docker run \
+  -ti \
+  --rm \
+  polinux/stress stress \
+    --cpu 1 \
+    --io 1 \
+    --vm 1 \
+    --vm-bytes 128M \
+    --timeout 1s \
+    --verbose
+
+stress --cpu 1 --io 1 --vm 1 --vm-bytes 256 --timeout 300 --verbose
