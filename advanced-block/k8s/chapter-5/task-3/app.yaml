@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-pod
+  labels:
+    app: app
+spec:
+  containers:
+  - name: writing-app
+    image: alpine
+    command: [
+      "sh",
+      "-c",
+      "while true; do echo \"$(date) | Writing in processing\" >> /app/output; sleep 5; done"
+    ]
+    volumeMounts:
+    - mountPath: /app
+      name: test-volume
+  - name: outputing-app
+    image: alpine
+    command: [
+      "sh",
+      "-c",
+      "while true; do tail -n 1 /app/output; sleep 5; done"
+    ]
+    volumeMounts:
+    - mountPath: /app
+      name: test-volume
+  volumes:
+  - name: test-volume
+    emptyDir:
+      sizeLimit: 500Mi
